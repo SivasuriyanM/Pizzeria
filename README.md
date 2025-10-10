@@ -44,33 +44,31 @@ pizzeriaserver/ # Backend microservices (Express + MongoDB)
 2. **Start MongoDB:**
 (default: mongodb://127.0.0.1:27017/PIZZERIADB).
 
-3.**Run backend services:**
-
-  ```sh
-  cd pizzeriaserver/pizzaslist && npm start
-  cd ../ingredients && npm start
-  cd ../users && npm start
-  cd ../pizzeriagateway && npm start
+3. **Run backend services:**
+    ```sh
+    cd pizzeriaserver/pizzaslist && npm start
+    cd ../ingredients && npm start
+    cd ../users && npm start
+    cd ../pizzeriagateway && npm start
 
 
 
 ### Frontend Setup
 
 1. **Install dependencies:**
-  ```sh
-  cd pizzeriapp
-  npm install
+    ```sh
+    cd pizzeriapp
+    npm install
 
 2. **Run the frontend:**
-  ```sh
-  npm run dev
+    ```sh
+    npm run dev
 
 3. **Access the app:**
 Open http://localhost:5173 (default Vite port).
 
 ### API Endpoints
 All APIs are proxied via the gateway at http://localhost:8080:
-  ```sh
   /getpizzas — List pizzas
   /getingredients — List ingredients
   /users — User registration
