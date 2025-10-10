@@ -39,50 +39,53 @@ pizzeriaserver/ # Backend microservices (Express + MongoDB)
    cd pizzeriaserver/pizzaslist && npm install
    cd ../ingredients && npm install
    cd ../users && npm install
-   cd ../pizzeriagateway && npm install
+   cd ../pizzeriagateway && npm install 
 
 2. **Start MongoDB:**
 (default: mongodb://127.0.0.1:27017/PIZZERIADB).
 
 3.**Run backend services:**
-#### In separate terminals
-cd pizzeriaserver/pizzaslist && npm start
-cd ../ingredients && npm start
-cd ../users && npm start
-cd ../pizzeriagateway && npm start
+
+  ```sh
+  cd pizzeriaserver/pizzaslist && npm start
+  cd ../ingredients && npm start
+  cd ../users && npm start
+  cd ../pizzeriagateway && npm start
 
 
 
 ### Frontend Setup
 
 1. **Install dependencies:**
-cd pizzeriapp
-npm install
+  ```sh
+  cd pizzeriapp
+  npm install
 
 2. **Run the frontend:**
-npm run dev
+  ```sh
+  npm run dev
 
 3. **Access the app:**
 Open http://localhost:5173 (default Vite port).
 
 ### API Endpoints
 All APIs are proxied via the gateway at http://localhost:8080:
-
-/getpizzas — List pizzas
-/getingredients — List ingredients
-/users — User registration
-/users/login — User login
-/users/cart/:userid — Get user cart
-/users/addtocart — Add pizza to cart
-/users/addmodified — Add customized pizza
-/users/addurownpizza — Build your own pizza
-/users/removefromcart — Remove item from cart
-/users/updatequat — Update cart item quantity
+  ```sh
+  /getpizzas — List pizzas
+  /getingredients — List ingredients
+  /users — User registration
+  /users/login — User login
+  /users/cart/:userid — Get user cart
+  /users/addtocart — Add pizza to cart
+  /users/addmodified — Add customized pizza
+  /users/addurownpizza — Build your own pizza
+  /users/removefromcart — Remove item from cart
+  /users/updatequat — Update cart item quantity
 
 ### Technologies Used
-Frontend: React, Redux Toolkit, Axios, Bootstrap, Vite
-Backend: Express, Mongoose, MongoDB, Express Gateway
-Other: Jade/Pug templates (for backend views), CORS
+-Frontend: React, Redux Toolkit, Axios, Bootstrap, Vite
+-Backend: Express, Mongoose, MongoDB, Express Gateway
+-Other: Jade/Pug templates (for backend views), CORS
 
 ### Customization
 Add new pizzas/ingredients via MongoDB or service endpoints.
