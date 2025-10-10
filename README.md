@@ -3,12 +3,13 @@
 This project is a full-stack pizza ordering application, consisting of a React frontend and a Node.js/Express backend with microservices architecture.
 
 ## Project Structure
-pizzeriapp/ # React frontend (Vite + Redux)
-pizzeriaserver/ # Backend microservices (Express + MongoDB)
-├─ pizzaslist/ # Pizza listing service
-├─ ingredients/ # Ingredients service
-├─ users/ # User & cart service
-└─ pizzeriagateway/ # API Gateway (Express Gateway)
+    ```sh
+    pizzeriapp/ # React frontend (Vite + Redux)
+    pizzeriaserver/ # Backend microservices (Express + MongoDB)
+    ├─ pizzaslist/ # Pizza listing service
+    ├─ ingredients/ # Ingredients service
+    ├─ users/ # User & cart service
+    └─ pizzeriagateway/ # API Gateway (Express Gateway)
 
 ## Features
 
@@ -82,9 +83,9 @@ Open http://localhost:5173 (default Vite port).
     /users/updatequat — Update cart item quantity
 
 ### Technologies Used
--Frontend: React, Redux Toolkit, Axios, Bootstrap, Vite
--Backend: Express, Mongoose, MongoDB, Express Gateway
--Other: Jade/Pug templates (for backend views), CORS
+- Frontend: React, Redux Toolkit, Axios, Bootstrap, Vite
+- Backend: Express, Mongoose, MongoDB, Express Gateway
+- Other: Jade/Pug templates (for backend views), CORS
 
 ### Customization
 Add new pizzas/ingredients via MongoDB or service endpoints.
