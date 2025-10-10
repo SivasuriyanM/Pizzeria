@@ -45,7 +45,7 @@ pizzeriaserver/ # Backend microservices (Express + MongoDB)
 (default: mongodb://127.0.0.1:27017/PIZZERIADB).
 
 3.**Run backend services:**
-# In separate terminals
+#### In separate terminals
 cd pizzeriaserver/pizzaslist && npm start
 cd ../ingredients && npm start
 cd ../users && npm start
