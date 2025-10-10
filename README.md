@@ -3,7 +3,6 @@
 This project is a full-stack pizza ordering application, consisting of a React frontend and a Node.js/Express backend with microservices architecture.
 
 ## Project Structure
-    ```
     pizzeriapp/ # React frontend (Vite + Redux)
     pizzeriaserver/ # Backend microservices (Express + MongoDB)
     ├─ pizzaslist/ # Pizza listing service
