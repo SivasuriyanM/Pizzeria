@@ -68,17 +68,18 @@ pizzeriaserver/ # Backend microservices (Express + MongoDB)
 Open http://localhost:5173 (default Vite port).
 
 ### API Endpoints
-All APIs are proxied via the gateway at http://localhost:8080:
-  /getpizzas — List pizzas
-  /getingredients — List ingredients
-  /users — User registration
-  /users/login — User login
-  /users/cart/:userid — Get user cart
-  /users/addtocart — Add pizza to cart
-  /users/addmodified — Add customized pizza
-  /users/addurownpizza — Build your own pizza
-  /users/removefromcart — Remove item from cart
-  /users/updatequat — Update cart item quantity
+    **All APIs are proxied via the gateway at http://localhost:8080:**
+    ```sh
+    /getpizzas — List pizzas
+    /getingredients — List ingredients
+    /users — User registration
+    /users/login — User login
+    /users/cart/:userid — Get user cart
+    /users/addtocart — Add pizza to cart
+    /users/addmodified — Add customized pizza
+    /users/addurownpizza — Build your own pizza
+    /users/removefromcart — Remove item from cart
+    /users/updatequat — Update cart item quantity
 
 ### Technologies Used
 -Frontend: React, Redux Toolkit, Axios, Bootstrap, Vite
