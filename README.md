@@ -42,7 +42,7 @@ This project is a full-stack pizza ordering application, consisting of a React f
    cd ../pizzeriagateway && npm install 
 
 2. **Start MongoDB:**
-(default: mongodb://127.0.0.1:27017/PIZZERIADB).
+ default: mongodb://127.0.0.1:27017/PIZZERIADB.
 
 3. **Run backend services:**
     ```sh
