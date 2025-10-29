@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 import { useSelector } from 'react-redux'
 
 import BuildPizza from './BuildPizza'
@@ -44,52 +44,66 @@ function OrderPizza() {
   }
 
   return (
-    <div className="container ">
-    <div className="row">
-      {isCustom?<BuildPizza pizza = {customPizza} ingredient={ingredients} userId={userId} back={setIsCustom}/>:
-      pizzas.map((pizza) => (
-        <div className="col-md-6 " key={pizza._id}>
-          <div className="card">
-            <div className="row g-0  ">
-              <div className="col-md-4  " >
-                 <h5 className="card-title fs-5">{pizza.name}</h5>
-                 
-                  <p style={{width:"2vw", height:"4vh", marginLeft:"35%", backgroundColor:pizza.type==="veg"?"green":"red"}}>
-                  
-                 </p>
-                 
-                 <p className="text-muted fw-bold ">₹{pizza.price}</p>
-                  <button className="btn btn-primary btn-sm"onClick={()=>handleCustom(pizza)}>Customize </button>
-                 
-              </div>
-              
-              <div className="col-md-6 d-flex align-items-center justify-content-center ">
-                <div className="card-body ">
-                   
-                    <p  style={{fontSize:"60%"}}className="card-text text-start">{pizza.description}</p>
-                    <p  style={{fontSize:"60%"}}className="text-start fw-lighter">
-                      <span ><strong>Ingredients :</strong>{pizza.ingredients.map((ing, i)=><span key={i}>{ing+", "}</span>)}</span>
-                    </p>
-                    
-                    <p  style={{fontSize:"60%"}}className=" text-start"> <strong>Toppings :</strong>{pizza.topping.map((tp,index)=><span  key={index}>{tp+", "}</span>)}</p>
-
-                   
+    <div className="container py-4">
+      <div className="row mb-4">
+        <div className="col-12 text-center">
+          <h1 className="display-4 fw-bold" style={{color: '#e74c3c'}}>Order Your Pizza</h1>
+          <p className="lead" style={{color: '#7f8c8d'}}>Choose from our delicious selection or create your own masterpiece</p>
+        </div>
+      </div>
+      
+      <div className="row g-4">
+        {isCustom ? (
+          <BuildPizza pizza={customPizza} ingredient={ingredients} userId={userId} back={setIsCustom}/>
+        ) : (
+          pizzas.map((pizza) => (
+            <div key={pizza._id} className="col-12 col-md-6 col-lg-4">
+              <div 
+                className="card h-100 shadow-lg border-0"
+                style={{borderRadius: '15px', overflow: 'hidden', transition: 'transform 0.3s, box-shadow 0.3s'}}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                }}
+              >
+                <img src={pizza.image} className="card-img-top" alt={pizza.name} style={{height: "200px", objectFit: "cover"}}/>
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title fw-bold" style={{color: '#2c3e50'}}>{pizza.name}</h5>
+                  <p className="card-text flex-grow-1" style={{color: '#7f8c8d'}}>
+                      {pizza.description}
+                  </p>
                 </div>
-                <div className="col-md-4 ">
-                <img
-                    src={pizza.image}
-                    alt={pizza.name}
-                    style={{width:"150%", height:"150%"}}
-                  />
-                   <button style={{width:"150%"}} className=" btn btn-warning btn-sm" onClick={() => handleClick(pizza._id) } disabled={status==='idle'?true:false}>Add to Cart</button>
-                  
+                <ul className="list-group list-group-flush"> 
+                  {pizza.ingredients.map((ing, i) => (
+                    <li className="list-group-item" key={i} style={{backgroundColor: '#f8f9fa'}}>{ing}</li>
+                  ))}
+                </ul>
+                <div className="card-body d-flex justify-content-between">
+                  <button 
+                    onClick={() => handleClick(pizza._id)} 
+                    disabled={status==='idle' ? true : false}
+                    className="btn btn-primary me-2"
+                    style={{borderRadius: '20px', fontWeight: 'bold', padding: '8px 20px'}}
+                  >
+                    Add to Cart
+                  </button>
+                  <button 
+                    onClick={()=>handleCustom(pizza)}
+                    className="btn btn-outline-primary"
+                    style={{borderRadius: '20px', fontWeight: 'bold', padding: '8px 20px'}}
+                  >
+                    Customize
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          ))
+        )}
+      </div>
     </div>
   )
 }
