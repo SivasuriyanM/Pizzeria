@@ -1,3 +1,7 @@
+# Dependencies
+node_modules
+node_modules/
+
 # Logs
 logs
 *.log
@@ -7,10 +11,51 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*
+
+# Build output
+/dist
+/dist-ssr
+/build
+
+# Vite related
+.vite/
+*.vitepress/cache
+*.vitepress/dist
+
+# parcel-bundler cache
+.cache/
+
+# next.js build output
+.next/
+
+# react native
+__generated__/
+android/app/build/
+ios/build/
+
+# typescript
+*.tsbuildinfo
+
+# Coverage directory used by Jest
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Runtime data
+.pid
+*.pid
+*.pid.lock
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +67,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.TMP
+*.TEMP
+
+# Testing
+/coverage
+*.lcov
+
+# Database
+*.db
+*.sqlite
+
+# Temporary folders
+tmp/
+temp/
+
+# Misc
+*.pem
+*.pub
